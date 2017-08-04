@@ -75,8 +75,12 @@ public class LibraryTest {
 
         library.listBooks(listOfBooks);
 
-        verify(printStream).println("Harry Potter, 2007, J.K. Rowling\nInfluence, 2017, Some Guy\nExpertise, 2010, Goodness\n");
+        verify(printStream).printf("Harry Potter     2007     J.K. Rowling" +
+                                    "\nInfluence     2017     Some Guy"     +
+                                    "\nExpertise     2010     Goodness\n");
 
     }
+
+
 
 }

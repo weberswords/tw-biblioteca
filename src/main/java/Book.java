@@ -14,7 +14,7 @@ public class Book {
 
     @Override
     public String toString(){
-        String stringOutput = title + ", " + yearPublished + ", " + author;
+        String stringOutput = String.format("%-10s %10d %10s", title, yearPublished, author);
         return stringOutput;
     }
 
