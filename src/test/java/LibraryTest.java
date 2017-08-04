@@ -40,12 +40,25 @@ public class LibraryTest {
     public void shouldListOneBookWhenListHasOneBook() {
 
         ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(new Book("Harry Potter"));
+        listOfBooks.add(new Book("Harry Potter", 2000, "JK Rowling"));
 
         library.listBooks(listOfBooks);
 
-        verify(printStream).println("Harry Potter");
+        verify(printStream).println("Harry Potter, 2000, JK Rowling");
 
+    }
+
+    @Test
+    public void shouldPrintAttributesOfABook() {
+        ArrayList<Book> listOfBooks = new ArrayList<>();
+
+        Book book = new Book("Harry Potter", 2007, "J.K. Rowling");
+
+        listOfBooks.add(book);
+
+        library.listBooks(listOfBooks);
+
+        verify(printStream).println("Harry Potter, 2007, J.K. Rowling");
     }
 
 }
