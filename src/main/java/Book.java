@@ -2,13 +2,18 @@ import java.io.PrintStream;
 
 public class Book {
 
-    PrintStream printStream;
+    private String title;
 
-    public Book(PrintStream printStream) {
-        this.printStream = printStream;
+    public Book(String title){
+        this.title = title;
     }
 
-    public void printGreeting() {
-        printStream.println("Welcome to Biblioteca!!");
+    @Override
+    public String toString(){
+        return title;
     }
+
+
+
+
 }
