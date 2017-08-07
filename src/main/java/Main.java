@@ -5,8 +5,8 @@ public class Main {
 
     public static void main(String[] args){
         PrintStream printStream = System.out;
-        Library library = new Library(printStream);
         ArrayList<Book> listOfBooks = new ArrayList<>();
+        Library library = new Library(printStream, listOfBooks);
 
         library.printGreeting();
         Book book1 = new Book("Harry Potter", 2007, "J.K. Rowling");
