@@ -23,19 +23,8 @@ public class Menu {
         }
     }
 
-    public void performOption(String optionIndex) {
-        if (optionIndex.equals("1")) {
-            listBooks();
-        }
-    }
 
-    private void listBooks() {
-        String listToReturn = "";
-
-        for (Book book: books) {
-            listToReturn += book;
-        }
-
-        printStream.println(listToReturn);
+    public String getUserInput() {
+        return "1";
     }
 }

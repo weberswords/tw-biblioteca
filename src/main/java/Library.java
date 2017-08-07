@@ -24,7 +24,22 @@ public class Library {
     }
 
     public void performOption(String optionIndex) {
-        menu.performOption(optionIndex);
+        switch(menu.getUserInput()){
+            case "1":
+                listBooks();
+                break;
+            default:
+                printStream.println("Invalid Input!");
+        }
+    }
+
+    private void listBooks() {
+        String listToReturn = "";
+        for (Book book : books) {
+            listToReturn += book;
+        }
+
+        printStream.println(listToReturn);
     }
 
 
