@@ -20,6 +20,7 @@ public class Menu {
     private void initializeOptionList() {
         optionList = new ArrayList<>();
         optionList.add("1) List Books");
+        optionList.add("To quit type \"quit\"");
     }
 
     public void listOptions() {

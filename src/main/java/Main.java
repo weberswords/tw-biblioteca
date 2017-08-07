@@ -18,8 +18,8 @@ public class Main {
         listOfBooks.add(book3);
 
         //library.listBooks(listOfBooks);
-        library.performOption();
-
+//        library.performOption();
+        library.run();
 
     }
 }

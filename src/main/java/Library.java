@@ -24,13 +24,17 @@ public class Library {
         menu.listOptions();
     }
 
-    public void performOption() {
+    public boolean performOption() {
         switch(menu.getUserInput()){
             case "1":
                 listBooks();
-                break;
+                return true;
+            case "quit":
+                printStream.println("Thank you for visiting the Library");
+                return false;
             default:
                 printStream.println("Invalid Input!");
+                return performOption();
         }
     }
 
@@ -43,5 +47,7 @@ public class Library {
         printStream.println(listToReturn);
     }
 
-
+    public void run() {
+        while(performOption()) {}
+    }
 }

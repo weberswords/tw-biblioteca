@@ -1,8 +1,12 @@
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static org.mockito.Mockito.*;
 
@@ -99,6 +103,31 @@ public class LibraryTest {
         verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n" +
                 "Influence\t2017\tSome Guy\n" +
                 "Expertise\t2010\tGoodness\n");
+    }
+
+    @Test
+    @Ignore
+    public void shouldReturnGoodbyeMessageWhenQuitSelected() throws Exception {
+        PrintStream printStream = mock(PrintStream.class);
+        Scanner scanner;
+        Menu menu;
+        String data = "quit";
+        InputStream stdIn = System.in;
+        try {
+            System.setIn(new ByteArrayInputStream(data.getBytes()));
+            scanner = new Scanner(System.in);
+            menu = new Menu(printStream, scanner);
+        } finally {
+            System.setIn(stdIn);
+        }
+
+        library.menu = menu;
+        library.performOption();
+
+        verify(printStream).println("Choose an option: ");
+        verify(printStream).println("1) List Books");
+        verify(printStream).println("To quit type \"quit\"");
+        verify(printStream).println("Thank you for visiting the Library");
     }
 
 
