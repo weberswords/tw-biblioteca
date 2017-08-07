@@ -31,7 +31,7 @@ public class LibraryTest {
     @Test
     public void shouldListNoBooksWhenTheListIsEmpty() {
 
-        library.performOption("1");
+        library.performOption();
 
         verify(printStream).println("");
     }
@@ -41,7 +41,7 @@ public class LibraryTest {
 
         listOfBooks.add(new Book("Harry Potter", 2000, "JK Rowling"));
 
-        library.performOption("1");
+        library.performOption();
 
         verify(printStream).println("Harry Potter\t2000\tJK Rowling\n");
 
@@ -53,7 +53,7 @@ public class LibraryTest {
 
         listOfBooks.add(book);
 
-        library.performOption("1");
+        library.performOption();
 
         verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n");
     }
@@ -69,7 +69,7 @@ public class LibraryTest {
         listOfBooks.add(book2);
         listOfBooks.add(book3);
 
-        library.performOption("1");
+        library.performOption();
 
         verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n" +
                                     "Influence\t2017\tSome Guy\n" +
@@ -81,7 +81,7 @@ public class LibraryTest {
     public void shouldPrintOneMenuOptionWhenOneMenuOptionPresent() {
         library.printMenuOptions();
 
-        verify(printStream).println("Option 1");
+        verify(printStream).println("1) List Books");
     }
 
     @Test
@@ -94,10 +94,12 @@ public class LibraryTest {
         listOfBooks.add(book2);
         listOfBooks.add(book3);
 
-        library.performOption("1");
+        library.performOption();
 
         verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n" +
                 "Influence\t2017\tSome Guy\n" +
                 "Expertise\t2010\tGoodness\n");
     }
+
+
 }

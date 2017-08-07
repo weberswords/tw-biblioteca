@@ -1,5 +1,6 @@
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Library {
@@ -11,7 +12,7 @@ public class Library {
 
     public Library(PrintStream printStream, ArrayList<Book> books) {
         this.printStream = printStream;
-        menu = new Menu(printStream, books);
+        menu = new Menu(printStream, new Scanner(System.in));
         this.books = books;
     }
 
@@ -23,7 +24,7 @@ public class Library {
         menu.listOptions();
     }
 
-    public void performOption(String optionIndex) {
+    public void performOption() {
         switch(menu.getUserInput()){
             case "1":
                 listBooks();
