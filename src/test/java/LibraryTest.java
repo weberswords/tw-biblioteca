@@ -44,7 +44,7 @@ public class LibraryTest {
 
         library.listBooks(listOfBooks);
 
-        verify(printStream).println("Harry Potter, 2000, JK Rowling\n");
+        verify(printStream).println("Harry Potter\t2000\tJK Rowling\n");
 
     }
 
@@ -58,7 +58,7 @@ public class LibraryTest {
 
         library.listBooks(listOfBooks);
 
-        verify(printStream).println("Harry Potter, 2007, J.K. Rowling\n");
+        verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n");
     }
 
     @Test
@@ -75,9 +75,9 @@ public class LibraryTest {
 
         library.listBooks(listOfBooks);
 
-        verify(printStream).printf("Harry Potter     2007     J.K. Rowling" +
-                                    "\nInfluence     2017     Some Guy"     +
-                                    "\nExpertise     2010     Goodness\n");
+        verify(printStream).println("Harry Potter\t2007\tJ.K. Rowling\n" +
+                                    "Influence\t2017\tSome Guy\n" +
+                                    "Expertise\t2010\tGoodness\n");
 
     }
 

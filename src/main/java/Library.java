@@ -20,11 +20,8 @@ public class Library {
         String listToReturn = "";
 
         for (Book book: listOfBooks) {
-            listToReturn += book + "\n";
+            listToReturn += book;
         }
-
-
-
 
         printStream.println(listToReturn);
     }
