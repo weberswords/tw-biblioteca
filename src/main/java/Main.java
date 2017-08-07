@@ -17,7 +17,8 @@ public class Main {
         listOfBooks.add(book2);
         listOfBooks.add(book3);
 
-        library.listBooks(listOfBooks);
+        //library.listBooks(listOfBooks);
+        library.printMenuOptions();
 
 
     }

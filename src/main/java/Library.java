@@ -6,10 +6,12 @@ public class Library {
 
 
     PrintStream printStream;
+    Menu menu;
 
 
     public Library(PrintStream printStream) {
         this.printStream = printStream;
+        menu = new Menu(printStream);
     }
 
     public void printGreeting() {
@@ -26,4 +28,7 @@ public class Library {
         printStream.println(listToReturn);
     }
 
+    public void printMenuOptions() {
+        menu.listOptions();
+    }
 }

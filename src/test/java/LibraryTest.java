@@ -81,6 +81,11 @@ public class LibraryTest {
 
     }
 
+    @Test
+    public void shouldPrintOneMenuOptionWhenOneMenuOptionPresent() {
+        library.printMenuOptions();
 
+        verify(printStream).println("Option 1");
+    }
 
 }

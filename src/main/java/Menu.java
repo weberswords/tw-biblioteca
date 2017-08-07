@@ -3,20 +3,15 @@ import java.util.ArrayList;
 
 public class Menu {
     PrintStream printStream;
-    ArrayList<String> optionList = new ArrayList<String>();
+    OptionManager options;
 
     public Menu(PrintStream printStream) {
         this.printStream = printStream;
+        options = new OptionManager(printStream);
     }
 
-    public void addOption(String s) {
-        optionList.add(s);
-    }
 
     public void listOptions() {
-        for (String option : optionList) {
-            String optionString = option;
-            printStream.println(optionString);
-        }
+        options.list();
     }
 }

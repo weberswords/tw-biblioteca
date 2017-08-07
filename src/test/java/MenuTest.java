@@ -10,9 +10,7 @@ public class MenuTest {
     public void shouldPrintOneOptionWhenListHasOneOption() throws Exception {
         PrintStream printStream = mock(PrintStream.class);
         Menu menu = new Menu(printStream);
-        menu.addOption("Option 1");
         menu.listOptions();
         verify(printStream).println("Option 1");
-
     }
 }
